@@ -41,7 +41,7 @@ ENV VIRTUALENV=/home/realpython/venv
 RUN python3 -m venv $VIRTUALENV
 ENV PATH="$VIRTUALENV/bin:$PATH"
 
-COPY --from-builder /home/realpython/dist/page_tracker*.whl /home/realpython
+COPY --from=builder /home/realpython/dist/page_tracker*.whl /home/realpython
 
 RUN python -m pip install --upgrade pip setuptools && \
     python -m pip install --no-cache-dir page_tracker*.whl
