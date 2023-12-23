@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code from Github
-        uses: actions/checkout@3
+        uses: actions/checkout@v3
       - name: Run end-to-end tests
         run: >
           docker compose --profile testing up
